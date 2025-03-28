@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=League+Spartan:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Questrial&display=swap');
 
 :root {
-  --modal-duration: 1s;
+  --modal-duration: 2s;
   --primary-color: #30336b;
   --secondary-color: #be2edd;
 }
@@ -18,7 +18,7 @@ body {
 
 body.show-nav {
   /* width of Nav */
-  transform: translateX(200px);
+  transform: translateX(300px);
 }
 
 nav {
@@ -28,7 +28,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  width: 200px;
+  width: 300px;
   height: 100vh;
   z-index: 100;
   transform: translateX(-100%);
@@ -125,6 +125,10 @@ button:focus {
   bottom: 0;
 }
 
+.modal-container.show-modal {
+  display: block;
+}
+
 .modal {
   background-color: white;
   border-radius: 5px;
@@ -136,6 +140,8 @@ button:focus {
   transform: translate(-50%, -50%);
   max-width: 100%;
   width: 400px;
+  animation-name: modalopen;
+  animation-duration: var(--modal-duration);
 }
 
 .modal-header {
@@ -174,4 +180,14 @@ button:focus {
   top: 0;
   right: 0;
   cursor: pointer;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
